@@ -90,10 +90,3 @@ def simple_iteration(a,b, x0=FIRST, count=1):
         x = iteration(x0)
         count+=1
     return count, x
-
-print(f'dichotomy: (number of iterations, answer) -> {dichotomy(0, 1)}')
-print(f'newton: (number of iterations, answer) -> {newton(0, 1)}')
-print(f'modified newton: (number of iterations, answer) -> {modified_newton(0, 1)}')
-print(f'movable chords: (number of iterations, answer) -> {movable_chords(0, 1)}')
-print(f'chords: (number of iterations, answer) -> {chords(0, 1)}')
-print(f'simple iteration: (number of iterations, answer) -> {simple_iteration(0, 1)}')
