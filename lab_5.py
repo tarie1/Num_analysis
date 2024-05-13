@@ -70,7 +70,8 @@ plt.plot(x_coor30, euler(30, x_coor30), color='forestgreen')
 plt.plot(x_coor30, taylor(30, x_coor30), color='deepskyblue')
 plt.plot(x_coor30, adams(30, x_coor30), color='darkviolet')
 plt.legend(['Accurate', 'Euler', 'Taylor', 'Adams'], loc=2)
-plt.title('Comparizon')
+plt.title('Comparison')
 plt.grid(True)
 plt.show()
+
 
