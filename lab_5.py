@@ -24,14 +24,14 @@ def diff_funcY(x,y):
 def graph_coorX(N):
     x_coor = []
     x = float(1/N)
-    for i in range(0,N):
+    for i in range(0,N+1):
         x_coor.append(math.floor(x*i*100)/100)
     return x_coor
 
 
 def accurate(N, x_coor):
     y_coor = []
-    for i in range(0, N):
+    for i in range(0, N+1):
         y_coor.append(diff_func(x_coor[i]))
     return y_coor
 
@@ -39,7 +39,7 @@ def accurate(N, x_coor):
 def euler(N, x_coor):
     y_coor = [2]
     h = get_step(N)
-    for i in range(1, N):
+    for i in range(1, N+1):
         y_coor.append(y_coor[i-1] + h*func(x_coor[i-1], y_coor[i-1]))
     return y_coor
 
@@ -47,7 +47,7 @@ def euler(N, x_coor):
 def taylor(N, x_coor):
     y_coor = [2]
     h = get_step(N)
-    for i in range(1, N):
+    for i in range(1, N+1):
         y_coor.append(y_coor[i-1] + h*func(x_coor[i-1], y_coor[i-1]) + (h**2/2)*
                       (diff_funcX(y_coor[i-1])+func(x_coor[i-1], y_coor[i-1])*diff_funcY(x_coor[i-1], y_coor[i-1])))
     return y_coor
@@ -58,7 +58,7 @@ def adams(N, x_coor):
     h = get_step(N)
     y_coor.append(y_coor[0] + h*func(x_coor[0], y_coor[0]) + (h**2/2)*
                       (diff_funcX(y_coor[0])+func(x_coor[0], y_coor[0])*diff_funcY(x_coor[0], y_coor[0])))
-    for i in range(2, N):
+    for i in range(2, N+1):
         y_coor.append(y_coor[i-1] + (h/2)*(3*func(x_coor[i-1], y_coor[i-1]) - func(x_coor[i-2], y_coor[i-2])))
     return y_coor
 
