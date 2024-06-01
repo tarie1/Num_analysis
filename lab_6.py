@@ -73,8 +73,8 @@ def tridiagonal():
     y[N-1] = math.exp(1) + math.exp(-1) - 2
 
     for i in range(1, N - 1):
-        lam_trid[i+1] = (-1)/ (lam_trid[i] - 2+h**2)
-        mu_trid[i+1] = (h**2 * (2.9*x[i] * (1-x[i]) + 7.8) - mu_trid[i]) / (lam_trid[i]-2+h**2)
+        lam_trid[i+1] = (-1)/ (lam_trid[i] - 2 - h**2)
+        mu_trid[i+1] = (h**2 * (2.9*x[i] * (1-x[i]) + 7.8) - mu_trid[i]) / (lam_trid[i]-2 - h**2)
         
     for i in range(N - 1, 1, -1):
         y[i-1] = y[i]*lam_trid[i] + mu_trid[i]
